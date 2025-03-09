@@ -13,5 +13,6 @@ public class FollowTarget : MonoBehaviour
     void Update()
     {
         transform.position = _target.position + _offset;
+       // transform.Translate(_offset);
     }
 }

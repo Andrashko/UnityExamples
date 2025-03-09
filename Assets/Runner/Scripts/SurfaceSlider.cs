@@ -21,12 +21,14 @@ public class SurfaceSlider : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        _normal = collision.contacts[0].normal;
+        if (collision.gameObject.tag.Equals("Ground"))
+            _normal = collision.contacts[0].normal;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        _normal = other.transform.up;
+        if (other.gameObject.tag.Equals("Ground"))
+            _normal = other.transform.up;
     }
 
     private void OnDrawGizmos()
