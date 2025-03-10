@@ -2,7 +2,7 @@ using Unity.Mathematics;
 using UnityEngine;
 
 
-public class FrirtPersonControl : MonoBehaviour
+public class FirstPersonControl : MonoBehaviour
 {
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private float rotationSpeed = 200.0f;
@@ -34,5 +34,11 @@ public class FrirtPersonControl : MonoBehaviour
         Quaternion cameraQuaternion = Quaternion.Euler(verticalRotation, horizontalRotation, 0f);
         cameraTransform.localRotation = cameraQuaternion;
         transform.localRotation = Quaternion.Euler(0, horizontalRotation, 0);
+    }
+
+    public void Stop()
+    {
+        speed = 0f;
+        rotationSpeed = 0f;
     }
 }

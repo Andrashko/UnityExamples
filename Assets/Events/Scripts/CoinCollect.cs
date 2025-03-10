@@ -7,7 +7,12 @@ public class CoinCollect : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            //unityEvent
             CoinManager.OnCoinCollected.Invoke(1);
+            //GlobalEventSystem
+            GlobalEventSystem.GetEvent("CoinCollected").Invoke();
+            GlobalEventSystem.GetEvent<int>("CoinCollectedWithAmount").Invoke(1);
+            // action
             Destroy(gameObject);
         }
     }

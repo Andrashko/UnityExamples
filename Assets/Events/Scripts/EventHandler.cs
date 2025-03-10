@@ -28,6 +28,7 @@ public class EventHandler : MonoBehaviour
     {
         damageActor.OnDamage -= ShowDamage;
         damageActor.OnDeath -= ShowDeath;
+        //optional
         CoinManager.OnCoinCollected.RemoveListener(ShowCoins);
     }
 }

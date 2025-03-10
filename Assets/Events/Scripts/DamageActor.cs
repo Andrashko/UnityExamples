@@ -26,6 +26,7 @@ public class DamageActor : MonoBehaviour
     private void Die()
     {
         OnDeath?.Invoke();
+        gameObject.GetComponent<FirstPersonControl>()?.Stop();
     }
 
     public float GetCurrentHealth()
